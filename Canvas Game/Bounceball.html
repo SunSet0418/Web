@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Javascript Game</title>
+  <h4>10번까지 날릴수 있으며 이후에는 점수가 초기화되서 시작됩니다.</h4>
+  <style>
+  canvas{
+    border :2px dotted black;
+    background-color: #fcff00;
+  }
+  </style>
+  <script src="game.js"></script>
+</head>
+<body onload="init();">
+  <canvas id="canvas" width="500" height="300"></canvas>
+  <div id="control">
+    속도<input id='velocity' value="30" type="number" min="0" max="100" step="1"/>
+    각도<input id="angle" value="45" type="number" min="0" max="90" step="1" />
+    <div id="score">점수 = 0</div>
+    <button onclick="start()">발사</button>
+  </div>
+</body>
+</html>
