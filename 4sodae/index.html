@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>4Sodae Login</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script>
+  $(function(){
+    $("#login").click(function login(){
+      password = $("#password").val();
+      login_url = "http://hansung.info:3000/login";
+
+      $.ajax({
+        method: "POST",
+        url : "http://localhost:3000/login",
+        datatype : "json",
+        data : {"password":password },
+        success:function(data){
+          if(data.success=="true"){
+              alert(data.name+"님 로그인")
+              window.location.href="list.html";
+          }
+        },
+        error:function(){
+          alert("로그인 오류");
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+  <h3>4소대 명렬표 로그인</h3>
+  <input type = "textbox" id = "password" placeholder="PASSWORD" /><br />
+  <input type = "button" id = "login" value = "login" />
+</body>
+</html>
